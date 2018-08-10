@@ -1,0 +1,24 @@
+syntax = "proto3";
+package proto_files;
+
+//import "github.com/golang/protobuf/any.proto";
+
+message AggrData {
+    float TotalAmount = 1;
+    int32 Count = 2;
+    map<string, string> Ids = 3;
+    map<string, string> MerchantId = 4;
+}
+
+message Stats {
+    int32 Year = 1;
+    int32 Month = 2;
+    int32 Day = 3;
+    int32 Hour = 4;
+
+    AggrData AggrData = 5;
+}
+
+message StatsArray {
+    repeated Stats statsArray = 1;
+}
